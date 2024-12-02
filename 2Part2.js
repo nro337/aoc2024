@@ -47,6 +47,8 @@ function syncReadFile(filename) {
       continue
     }
 
+    // If there is 1 issues, check if removing the previous, current, or next index from the array
+    // results in no more issue indexes being found
     const prevIssueIndex = checkReport(removeFromArray(delimited, issueIndex-1))
     const currentIssueIndex = checkReport(removeFromArray(delimited, issueIndex))
     const nextIssueIndex = checkReport(removeFromArray(delimited, issueIndex+1))
